@@ -1,29 +1,29 @@
 {
-  "$schema": "https://qooxdoo.org/schema/compile-1-0-0.json",
-  "targets": [
-    {
-      "type": "source",
-      "outputPath": "compiled/source",
-      "bundle": {
-        "include": "qx.*"
-      }
+    "$schema": "https://qooxdoo.org/schema/compile-1-0-0.json",
+    "targets": [
+        {
+            "type": "source",
+            "outputPath": "compiled/source",
+            "bundle": {
+                "include": "qx.*"
+            }
+        },
+        {
+            "type": "build",
+            "outputPath": "compiled/build"
+        }
+    ],
+    "defaultTarget": "source",
+    "locales": [ "en" ],
+    "environment": {
+        "qx.icontheme": "Tango"
     },
-    {
-      "type": "build",
-      "outputPath": "compiled/build"
-    }
-  ],
-  "defaultTarget": "source",
-  "locales": ["en"],
-  "environment": {
-      "qx.icontheme": "Tango"
-  },
-  "applications": [
-    {
-      "class": "vista.Application",
-      "theme": "vista.theme.Theme",
-      "name": "vista",
-      "bootPath": "source/boot"
-    }
-  ]
+    "applications": [
+        {
+            "class": "vista.Application",
+            "theme": "vista.theme.std.Theme",
+            "name": "vista",
+            "bootPath": "source/boot"
+        }
+    ]
 }
