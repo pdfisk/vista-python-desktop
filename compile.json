@@ -21,7 +21,7 @@
     "applications": [
         {
             "class": "vista.Application",
-            "theme": "vista.theme.std.Theme",
+            "theme": "vista.theme.vista.Theme",
             "name": "vista",
             "bootPath": "source/boot"
         }
