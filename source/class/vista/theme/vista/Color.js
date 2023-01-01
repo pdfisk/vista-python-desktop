@@ -4,5 +4,7 @@ qx.Theme.define("vista.theme.vista.Color",
 
         colors:
         {
+            'viewport-background': '#79a5a6'
         }
+
     });

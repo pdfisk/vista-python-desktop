@@ -7,6 +7,8 @@ qx.Class.define("vista.Application",
 
             main: function () {
                 this.base(arguments);
+                const root = this.getRoot();
+                vista.ui.viewport.Viewport.getInstance(root);
                 const window = new qx.ui.window.Window;
                 window.setCaption('Vista Python Console');
                 window.setWidth(525);
