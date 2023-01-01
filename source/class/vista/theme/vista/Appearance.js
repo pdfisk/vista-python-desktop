@@ -33,5 +33,7 @@ qx.Theme.define("vista.theme.vista.Appearance",
 
         appearances:
         {
+            'navbar-height': 45
         }
+
     });
