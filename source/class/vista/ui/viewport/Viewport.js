@@ -37,4 +37,5 @@ qx.Class.define('vista.ui.viewport.Viewport',
             }
 
         }
+
     });
