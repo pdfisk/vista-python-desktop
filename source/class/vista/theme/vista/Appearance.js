@@ -33,15 +33,24 @@ qx.Theme.define("vista.theme.vista.Appearance",
 
         appearances:
         {
-            viewport: {
+
+            navbar: {
                 style(states) {
                     return {
-                        backgroundColor: "background-viewport"
+                        backgroundColor: "navbar-background",
+                        height: 45
                     };
                 }
             },
 
-            'navbar-height': 45
+            viewport: {
+                style(states) {
+                    return {
+                        backgroundColor: "viewport-background"
+                    };
+                }
+            }
+
         }
 
     });

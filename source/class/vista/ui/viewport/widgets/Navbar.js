@@ -10,18 +10,16 @@ qx.Class.define('vista.ui.viewport.widgets.Navbar',
         },
 
         properties: {
+            appearance: {
+                refine: true,
+                init: 'navbar'
+            },
         },
 
         members:
         {
 
             initialize: function () {
-                this.setBackgroundColor(this._getNavbarBackgroundColor());
-                this.setHeight(vista.constants.Appearance.NAVBAR_HEIGHT);
-            },
-
-            _getNavbarBackgroundColor: function () {
-                return vista.util.ThemeUtil.getColor(vista.constants.Color.NAVBAR_BACKGROUND);
             }
 
         }

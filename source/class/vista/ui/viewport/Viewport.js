@@ -31,15 +31,9 @@ qx.Class.define('vista.ui.viewport.Viewport',
         {
 
             initialize: function () {
-                window.X = this;
                 this.getRoot().add(this, { top: 0, right: 0, bottom: 0, left: 0 });
-                //this.setBackgroundColor(this._getViewportBackgroundColor());
                 this.setLayout(new qx.ui.layout.Dock());
                 this.add(vista.ui.viewport.widgets.Navbar.getInstance(), { edge: 'north' });
-            },
-
-            _getViewportBackgroundColor: function () {
-                return vista.util.ThemeUtil.getColor(vista.constants.Color.VIEWPORT_BACKGROUND);
             }
 
         }
