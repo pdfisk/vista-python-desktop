@@ -34,7 +34,7 @@ qx.Theme.define('vista.theme.vista.Appearance',
         appearances:
         {
 
-            'console-window': {
+            'base-window': {
                 alias: 'window',
                 style(states) {
                     return {
