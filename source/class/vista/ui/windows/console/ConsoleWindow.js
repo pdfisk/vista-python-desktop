@@ -8,6 +8,10 @@ qx.Class.define('vista.ui.windows.console.ConsoleWindow',
         members:
         {
 
+            defaultButtons: function () {
+                return ['Eval', 'Clear Out', 'Clear In']
+            },
+
             defaultCaption: function () {
                 return 'Vista Python Console';
             }
