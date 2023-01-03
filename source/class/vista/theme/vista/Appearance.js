@@ -48,10 +48,7 @@ qx.Theme.define('vista.theme.vista.Appearance',
                 style(states) {
                     return {
                         backgroundColor: 'buttonbar-background',
-                        paddingTop: 2,
-                        paddingRight: 7,
-                        paddingBottom: 2,
-                        paddingLeft: 7
+                        padding: [2, 7]
                     };
                 }
             },
@@ -66,7 +63,7 @@ qx.Theme.define('vista.theme.vista.Appearance',
             },
 
             'transcript-panel': {
-                alias: 'textarea',
+                include: 'textarea',
                 style(states) {
                     return {
                         font: 'monospace',
