@@ -16,6 +16,10 @@ qx.Class.define('vista.ui.windows.base.BaseWindow',
 
             buttonBar: {
                 init: null
+            },
+
+            contentPanel: {
+                init: null
             }
 
         },
@@ -29,8 +33,13 @@ qx.Class.define('vista.ui.windows.base.BaseWindow',
                 this.defaultButtons().forEach((label) => { this.getButtonBar().addButton(label); });
             },
 
+            addContent: function () {
+                this.setContentPanel(this.defaultContent());
+                this.add(this.getContentPanel(), { edge: 'center' });
+            },
+
             defaultButtons: function () {
-                return []
+                return [];
             },
 
             defaultCaption: function () {
@@ -45,9 +54,14 @@ qx.Class.define('vista.ui.windows.base.BaseWindow',
                 return true;
             },
 
+            defaultContent: function () {
+                return new vista.ui.widgets.TranscriptPanel();
+            },
+
             initialize: function () {
                 this.setCaption(this.defaultCaption());
                 this.setLayout(new qx.ui.layout.Dock());
+                this.addContent();
                 if (this.defaultHasButtonBar())
                     this.addButtonBar();
                 this.addListener('appear', () => { this.onAppear(); });
