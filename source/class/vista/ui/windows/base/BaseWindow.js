@@ -8,17 +8,32 @@ qx.Class.define('vista.ui.windows.base.BaseWindow',
         },
 
         properties: {
+
             appearance: {
                 refine: true,
                 init: 'base-window'
+            },
+
+            buttonBar: {
+                init: null
             }
+
         },
 
         members:
         {
 
+            addButtonBar: function () {
+                this.setButtonBar(new vista.ui.windows.base.widgets.ButtonBar());
+                this.add(this.getButtonBar(), { edge: 'south' });
+            },
+
             defaultCaption: function () {
                 return 'a Window';
+            },
+
+            defaultHasButtonBar: function () {
+                return true;
             },
 
             defaultIsCentered: function () {
@@ -27,6 +42,9 @@ qx.Class.define('vista.ui.windows.base.BaseWindow',
 
             initialize: function () {
                 this.setCaption(this.defaultCaption());
+                this.setLayout(new qx.ui.layout.Dock());
+                if (this.defaultHasButtonBar())
+                    this.addButtonBar();
                 this.addListener('appear', () => { this.onAppear(); });
                 this.show();
             },

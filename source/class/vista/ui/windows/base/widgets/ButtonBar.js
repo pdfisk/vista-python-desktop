@@ -1,8 +1,7 @@
-qx.Class.define('vista.ui.viewport.widgets.NavBar',
+qx.Class.define('vista.ui.windows.base.widgets.ButtonBar',
     {
         extend: qx.ui.container.Composite,
 
-        type: 'singleton',
 
         construct: function () {
             this.base(arguments);
@@ -12,7 +11,7 @@ qx.Class.define('vista.ui.viewport.widgets.NavBar',
         properties: {
             appearance: {
                 refine: true,
-                init: 'navbar'
+                init: 'buttonbar'
             },
         },
 
@@ -20,6 +19,8 @@ qx.Class.define('vista.ui.viewport.widgets.NavBar',
         {
 
             initialize: function () {
+                this.setLayout(new qx.ui.layout.HBox());
+                this.add(new qx.ui.form.Button('Hello'));
             }
 
         }

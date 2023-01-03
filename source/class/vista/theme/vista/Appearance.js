@@ -44,6 +44,18 @@ qx.Theme.define('vista.theme.vista.Appearance',
                 }
             },
 
+            buttonbar: {
+                style(states) {
+                    return {
+                        backgroundColor: 'buttonbar-background',
+                        paddingTop: 2,
+                        paddingRight: 7,
+                        paddingBottom: 2,
+                        paddingLeft: 7
+                    };
+                }
+            },
+
             navbar: {
                 style(states) {
                     return {
