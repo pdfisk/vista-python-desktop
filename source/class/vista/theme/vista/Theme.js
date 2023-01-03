@@ -1,4 +1,4 @@
-qx.Theme.define("vista.theme.vista.Theme",
+qx.Theme.define('vista.theme.vista.Theme',
     {
         meta:
         {

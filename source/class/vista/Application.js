@@ -1,4 +1,4 @@
-qx.Class.define("vista.Application",
+qx.Class.define('vista.Application',
     {
         extend: qx.application.Standalone,
 

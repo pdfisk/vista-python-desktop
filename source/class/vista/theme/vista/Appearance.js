@@ -27,17 +27,27 @@
  * @asset(qx/iconfont/MaterialIcons/materialiconstwotone-v104.otf)
  * 
  */
-qx.Theme.define("vista.theme.vista.Appearance",
+qx.Theme.define('vista.theme.vista.Appearance',
     {
         extend: qx.theme.modern.Appearance,
 
         appearances:
         {
 
+            'console-window': {
+                alias: 'window',
+                style(states) {
+                    return {
+                        height: 475,
+                        width: 525
+                    };
+                }
+            },
+
             navbar: {
                 style(states) {
                     return {
-                        backgroundColor: "navbar-background",
+                        backgroundColor: 'navbar-background',
                         height: 45
                     };
                 }
@@ -46,7 +56,7 @@ qx.Theme.define("vista.theme.vista.Appearance",
             viewport: {
                 style(states) {
                     return {
-                        backgroundColor: "viewport-background"
+                        backgroundColor: 'viewport-background'
                     };
                 }
             }

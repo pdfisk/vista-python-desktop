@@ -8,10 +8,10 @@ qx.Class.define('vista.ui.windows.console.ConsoleWindow',
         },
 
         properties: {
-        //    appearance: {
-        //        refine: true,
-        //        init: 'console-window'
-        //    }
+            appearance: {
+                refine: true,
+                init: 'console-window'
+            }
         },
 
         members:
@@ -19,8 +19,6 @@ qx.Class.define('vista.ui.windows.console.ConsoleWindow',
 
             initialize: function () {
                 this.setCaption('Vista Python Console');
-                this.setWidth(525);
-                this.setHeight(475);
                 this.addListener('appear', () => { this.onAppear(); });
                 this.show();
             },
