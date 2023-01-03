@@ -69,6 +69,7 @@ qx.Class.define('vista.ui.windows.base.BaseWindow',
             },
 
             onAppear: function () {
+                window.X = this;
                 if (this.defaultIsCentered())
                     this.center();
             },

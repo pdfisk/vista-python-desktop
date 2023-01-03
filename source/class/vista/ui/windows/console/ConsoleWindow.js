@@ -14,6 +14,10 @@ qx.Class.define('vista.ui.windows.console.ConsoleWindow',
 
             defaultCaption: function () {
                 return 'Vista Python Console';
+            },
+
+            defaultContent: function () {
+                return new vista.ui.windows.console.widgets.SplitPanel();
             }
 
         }
