@@ -38,8 +38,8 @@ qx.Theme.define('vista.theme.vista.Appearance',
                 alias: 'window',
                 style(states) {
                     return {
-                        height: 475,
-                        width: 525
+                        height: parseInt(qx.bom.Viewport.getHeight() * vista.constants.WindowConstants.PERCENT_HEIGHT),
+                        width: parseInt(qx.bom.Viewport.getWidth() * vista.constants.WindowConstants.PERCENT_WIDTH)
                     };
                 }
             },
