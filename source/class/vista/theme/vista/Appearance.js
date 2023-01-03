@@ -65,6 +65,16 @@ qx.Theme.define('vista.theme.vista.Appearance',
                 }
             },
 
+            'transcript-panel': {
+                alias: 'textarea',
+                style(states) {
+                    return {
+                        font: 'monospace',
+                        padding: 4
+                    };
+                }
+            },
+
             viewport: {
                 style(states) {
                     return {

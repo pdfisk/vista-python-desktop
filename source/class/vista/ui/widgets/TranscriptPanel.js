@@ -9,6 +9,10 @@ qx.Class.define('vista.ui.widgets.TranscriptPanel',
         },
 
         properties: {
+            appearance: {
+                refine: true,
+                init: 'transcript-panel'
+            }
         },
 
         members:

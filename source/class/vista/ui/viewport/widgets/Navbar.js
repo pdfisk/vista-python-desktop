@@ -13,7 +13,7 @@ qx.Class.define('vista.ui.viewport.widgets.NavBar',
             appearance: {
                 refine: true,
                 init: 'navbar'
-            },
+            }
         },
 
         members:
