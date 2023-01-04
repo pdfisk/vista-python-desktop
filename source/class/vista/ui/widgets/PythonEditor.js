@@ -18,6 +18,10 @@ qx.Class.define('vista.ui.widgets.PythonEditor', {
 
     members: {
 
+        clear: function () {
+            this.setValue('');
+        },
+
         getValue: function () {
             if (this.getEditor() == null)
                 return '';

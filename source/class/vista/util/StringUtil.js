@@ -6,6 +6,7 @@ qx.Class.define('vista.util.StringUtil',
             asTag: function (text) {
                 return text.toLowerCase().replaceAll(' ', '_');
             }
+
         }
 
     });
