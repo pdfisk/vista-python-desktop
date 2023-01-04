@@ -8,7 +8,7 @@ qx.Class.define('vista.Application',
             main: function () {
                 this.base(arguments);
                 const root = this.getRoot();
-                vista.ui.viewport.Viewport.getInstance(root);
+                vista.ui.viewport.Viewport.getInstance().initialize(root);
                 new vista.ui.windows.console.ConsoleWindow();
             }
 
