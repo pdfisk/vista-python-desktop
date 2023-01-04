@@ -16,7 +16,7 @@ qx.Class.define('vista.ui.windows.console.widgets.SplitPanel',
         {
 
             initialize: function () {
-                this.setCin(new vista.ui.widgets.TranscriptPanel());
+                this.setCin(new vista.ui.widgets.PythonEditor());
                 this.setCout(new vista.ui.widgets.TranscriptPanel());
                 this.add(this.getCout(), 1);
                 this.add(this.getCin(), 1);
