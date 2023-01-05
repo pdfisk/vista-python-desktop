@@ -23,7 +23,7 @@ qx.Class.define('vista.ui.windows.base.widgets.ButtonBar',
         {
 
             addButton: function (label) {
-                const button = new qx.ui.form.Button(label);
+                const button = new vista.ui.widgets.Button(label);
                 const tag = vista.util.StringUtil.asTag(label);
                 this.add(button);
                 button.addListener('click', () => { this.getWindow().onButtonClicked(tag); });
