@@ -10,10 +10,10 @@ qx.Class.define('vista.ui.viewport.widgets.Logo',
         },
 
         properties: {
-        //    appearance: {
-        //        refine: true,
-        //        init: 'navbar'
-        //    }
+            appearance: {
+                refine: true,
+                init: 'navbar-logo'
+            }
         },
 
         members:

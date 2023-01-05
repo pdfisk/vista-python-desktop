@@ -62,6 +62,16 @@ qx.Theme.define('vista.theme.vista.Appearance',
                 }
             },
 
+            'navbar-logo': {
+                include: 'image',
+                style(states) {
+                    return {
+                        marginLeft: 7,
+                        marginTop: 2
+                    };
+                }
+            },
+
             'transcript-panel': {
                 include: 'textarea',
                 style(states) {
