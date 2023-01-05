@@ -1,4 +1,4 @@
 1. navbar
-2. mobile
-3. if
+2. if
+3. mobile
 4. board

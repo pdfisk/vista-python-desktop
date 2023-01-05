@@ -20,6 +20,9 @@ qx.Class.define('vista.ui.viewport.widgets.NavBar',
         {
 
             initialize: function () {
+                this.setLayout(new qx.ui.layout.Dock());
+                const logo = vista.ui.viewport.widgets.Logo.getInstance();
+                this.add(logo, { edge: 'west' });
             }
 
         }
