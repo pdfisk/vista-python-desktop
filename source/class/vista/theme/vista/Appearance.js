@@ -48,7 +48,7 @@ qx.Theme.define('vista.theme.vista.Appearance',
                 style(states) {
                     return {
                         backgroundColor: 'buttonbar-background',
-                        padding: [2, 7]
+                        padding: [1, 7, 2]
                     };
                 }
             },
@@ -86,6 +86,14 @@ qx.Theme.define('vista.theme.vista.Appearance',
                 style(states) {
                     return {
                         backgroundColor: 'viewport-background'
+                    };
+                }
+            },
+
+            'vista-button': {
+                include: 'button',
+                style(states) {
+                    return {
                     };
                 }
             }

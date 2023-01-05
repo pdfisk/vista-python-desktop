@@ -6,6 +6,10 @@ qx.Class.define('vista.ui.widgets.Button', {
     },
 
     properties: {
+        appearance: {
+            refine: true,
+            init: 'vista-button'
+        },
     },
 
     members: {
