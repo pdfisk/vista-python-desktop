@@ -4,11 +4,11 @@ qx.Theme.define('vista.theme.vista.Color',
 
         colors:
         {
-            'buttonbar-background': '#986784',
-            'navbar-background': '#f5ab54',
-            'viewport-background': '#79a5a6',
-            'window-caption-active-start': '#986784',
-            'window-caption-active-end': '#6a485d',
+            'buttonbar-background': vista.constants.ColorConstants.WindowDecoratorLight,
+            'navbar-background': vista.constants.ColorConstants.NavbarBackground,
+            'viewport-background': vista.constants.ColorConstants.ViewportBackground,
+            'window-caption-active-start': vista.constants.ColorConstants.WindowDecoratorLight,
+            'window-caption-active-end': vista.constants.ColorConstants.WindowDecoratorDark,
 
             'vista-button-border': '#666666',
             'vista-button-border-disabled': '#959595',
