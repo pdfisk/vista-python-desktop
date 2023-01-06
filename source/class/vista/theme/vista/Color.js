@@ -4,7 +4,7 @@ qx.Theme.define('vista.theme.vista.Color',
 
         colors:
         {
-            'vista-buttonbar-background': '#c5c5c5',
+            'buttonbar-background': '#986784',
             'navbar-background': '#f5ab54',
             'viewport-background': '#79a5a6',
             'window-caption-active-start': '#986784',
