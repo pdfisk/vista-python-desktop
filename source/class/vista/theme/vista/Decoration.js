@@ -6,7 +6,7 @@ qx.Theme.define('vista.theme.vista.Decoration',
         {
             'vista-button': {
                 style: {
-                    radius: 3,
+                    radius: 9,
                     color: 'vista-button-border',
                     width: 1,
                     startColor: 'vista-button-start',
@@ -51,7 +51,7 @@ qx.Theme.define('vista.theme.vista.Decoration',
 
             'vista-button-focused': {
                 style: {
-                    radius: 3,
+                    radius: 9,
                     color: 'vista-button-border',
                     width: 1,
                     innerColor: 'vista-button-focused',
