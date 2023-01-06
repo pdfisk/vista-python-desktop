@@ -150,7 +150,8 @@ qx.Theme.define('vista.theme.vista.Appearance',
 
                 style(states) {
                     return {
-                        center: true
+                        center: true,
+                        font: 'bold'
                     };
                 }
             },

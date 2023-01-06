@@ -5,4 +5,5 @@ qx.Theme.define('vista.theme.vista.Font',
         fonts:
         {
         }
+
     });
