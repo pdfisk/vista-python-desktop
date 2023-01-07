@@ -16,8 +16,11 @@ qx.Class.define('vista.ui.widgets.OutputPanel',
         {
 
             changeSelection: function () {
-                console.log('changeSelection');
-                window.X = this;
+                const selection = this.getSelection()[0];
+                if (selection == this.getTranscript())
+                    this.setSelection([this.getBoard()]);
+                else
+                    this.setSelection([this.getTranscript()]);
             },
 
             initialize: function () {

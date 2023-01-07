@@ -3,7 +3,7 @@ qx.Class.define('vista.ui.widgets.containers.HPanel',
         extend: qx.ui.container.Composite,
 
 
-        construct: function (window) {
+        construct: function () {
             this.base(arguments);
             this.initialize();
         },
