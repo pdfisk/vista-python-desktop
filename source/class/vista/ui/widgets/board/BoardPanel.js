@@ -13,17 +13,16 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
         members:
         {
 
-            addTile: function (widget, row, column) {
-                console.log('addTile', row, column);
-                this.add(widget, { row: row, column: column });
+            addTile: function (row, column) {
+                const tile = this.defaultTile();
+                this.add(tile, { row: row, column: column });
             },
 
             addTiles: function () {
                 this.removeAll();
                 for (let row = 0; row < this.defaultSize(); row++) {
                     for (let column = 0; column < this.defaultSize(); column++) {
-                        const tile = new qx.ui.form.Button('X');
-                        this.add(tile, { row: row, column: column });
+                        this.addTile(row, column);
                     }
                 }
             },
