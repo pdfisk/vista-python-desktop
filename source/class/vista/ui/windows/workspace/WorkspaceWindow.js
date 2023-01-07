@@ -14,6 +14,10 @@ qx.Class.define('vista.ui.windows.workspace.WorkspaceWindow',
                 return ['Eval', 'Clear Out', 'Clear In']
             },
 
+            defaultButtonsRight: function () {
+                return ['Orientation', 'Panel']
+            },
+
             defaultCaption: function () {
                 return 'Vista Python Workspace';
             },

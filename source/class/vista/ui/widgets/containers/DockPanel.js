@@ -30,7 +30,7 @@ qx.Class.define('vista.ui.widgets.containers.DockPanel',
             },
 
             initialize: function () {
-               this.setLayout(new qx.ui.layout.HBox());
+               this.setLayout(new qx.ui.layout.Dock());
             }
 
         }

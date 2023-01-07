@@ -31,6 +31,7 @@ qx.Class.define('vista.ui.windows.base.BaseWindow',
                 this.setButtonBar(new vista.ui.windows.base.widgets.ButtonBar(this));
                 this.add(this.getButtonBar(), { edge: 'south' });
                 this.defaultButtonsLeft().forEach((label) => { this.getButtonBar().addButtonLeft(label); });
+                this.defaultButtonsRight().forEach((label) => { this.getButtonBar().addButtonRight(label); });
             },
 
             addContent: function () {
