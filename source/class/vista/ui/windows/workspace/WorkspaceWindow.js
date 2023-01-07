@@ -54,6 +54,7 @@ qx.Class.define('vista.ui.windows.workspace.WorkspaceWindow',
             onEval: function () {
                 const fn = (text) => {
                     this.getCout().pr(text);
+                    this.getCout().scrollToEnd();
                 };
                 const src = this.getCin().getValue();
                 vista.python.PythonApi.eval(src, fn);

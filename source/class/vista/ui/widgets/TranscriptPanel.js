@@ -24,8 +24,11 @@ qx.Class.define('vista.ui.widgets.TranscriptPanel',
 
             _deferredText: '',
 
+            _domElement: null,
+
             _onAppear: function () {
                 this._appeared = true;
+                this._domElement = this.getContentElement().getDomElement();
                 this.setValue('');
                 if (this._deferredText.length > 0) {
                     this.append(this._deferredText);
@@ -55,6 +58,16 @@ qx.Class.define('vista.ui.widgets.TranscriptPanel',
 
             prn: function (text) {
                 this.append(text + '\n');
+            },
+
+            scrollToEnd: function () {
+                if (this._domElement)
+                    this._domElement.scrollTop = this._domElement.scrollHeight;
+            },
+
+            scrollToTop: function () {
+                if (this._domElement)
+                    this._domElement.scrollTop = 0;
             }
 
         }
