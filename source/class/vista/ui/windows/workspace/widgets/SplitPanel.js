@@ -1,4 +1,4 @@
-qx.Class.define('vista.ui.windows.console.widgets.SplitPanel',
+qx.Class.define('vista.ui.windows.workspace.widgets.SplitPanel',
     {
         extend: qx.ui.splitpane.Pane,
 

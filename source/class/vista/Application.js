@@ -9,7 +9,7 @@ qx.Class.define('vista.Application',
                 this.base(arguments);
                 const root = this.getRoot();
                 vista.ui.viewport.Viewport.getInstance().initialize(root);
-                new vista.ui.windows.console.ConsoleWindow();
+                new vista.ui.windows.workspace.WorkspaceWindow();
             }
 
         }

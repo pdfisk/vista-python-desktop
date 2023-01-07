@@ -1,4 +1,4 @@
-qx.Class.define('vista.ui.windows.console.ConsoleWindow',
+qx.Class.define('vista.ui.windows.workspace.WorkspaceWindow',
     {
         extend: vista.ui.windows.base.BaseWindow,
 
@@ -15,11 +15,11 @@ qx.Class.define('vista.ui.windows.console.ConsoleWindow',
             },
 
             defaultCaption: function () {
-                return 'Vista Python Console';
+                return 'Vista Python Workspace';
             },
 
             defaultContent: function () {
-                const splitPanel = new vista.ui.windows.console.widgets.SplitPanel();
+                const splitPanel = new vista.ui.windows.workspace.widgets.SplitPanel();
                 this.setCin(splitPanel.getCin());
                 this.setCout(splitPanel.getCout());
                 return splitPanel;
