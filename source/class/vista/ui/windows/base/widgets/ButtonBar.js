@@ -1,12 +1,11 @@
 qx.Class.define('vista.ui.windows.base.widgets.ButtonBar',
     {
-        extend: qx.ui.container.Composite,
+        extend: vista.ui.widgets.containers.HPanel,
 
 
         construct: function (window) {
             this.base(arguments);
             this.setWindow(window);
-            this.initialize();
         },
 
         properties: {
@@ -29,10 +28,8 @@ qx.Class.define('vista.ui.windows.base.widgets.ButtonBar',
                 button.addListener('click', () => { this.getWindow().onButtonClicked(tag); });
             },
 
-            initialize: function () {
-                const layout = new qx.ui.layout.HBox();
-                layout.setSpacing(vista.constants.WindowConstants.BUTTONBAR_SPACING);
-                this.setLayout(layout);
+            defaultSpacing: function () {
+                return vista.constants.WindowConstants.BUTTONBAR_SPACING;
             }
 
         }
