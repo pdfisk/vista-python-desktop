@@ -15,7 +15,7 @@ qx.Class.define('vista.ui.windows.workspace.WorkspaceWindow',
             },
 
             defaultButtonsRight: function () {
-                return ['Orientation', 'Panel']
+                return ['Orientation', 'Output']
             },
 
             defaultCaption: function () {
@@ -43,6 +43,9 @@ qx.Class.define('vista.ui.windows.workspace.WorkspaceWindow',
                     case 'orientation':
                         this.onOrientation();
                         break;
+                    case 'output':
+                        this.onOutput();
+                        break;
                     default:
                         console.log('onButtonClicked', tag);
                         break;
@@ -68,9 +71,12 @@ qx.Class.define('vista.ui.windows.workspace.WorkspaceWindow',
             },
 
             onOrientation: function () {
-                this.getContentPanel().toggleOrientation();
-            }
+                this.getContentPanel().changeOrientation();
+            },
 
+            onOutput: function () {
+                this.getContentPanel().changeOutput();
+            }
 
         }
 

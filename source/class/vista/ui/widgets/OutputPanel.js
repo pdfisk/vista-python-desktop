@@ -8,12 +8,17 @@ qx.Class.define('vista.ui.widgets.OutputPanel',
         },
 
         properties: {
-            board: {init: null},
-            transcript: {init:null}
+            board: { init: null },
+            transcript: { init: null }
         },
 
         members:
         {
+
+            changeSelection: function () {
+                console.log('changeSelection');
+                window.X = this;
+            },
 
             initialize: function () {
                 this.setBoard(new vista.ui.widgets.board.BoardPanel());
