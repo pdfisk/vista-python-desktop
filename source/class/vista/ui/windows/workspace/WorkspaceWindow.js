@@ -23,10 +23,10 @@ qx.Class.define('vista.ui.windows.workspace.WorkspaceWindow',
             },
 
             defaultContent: function () {
-                const splitPanel = new vista.ui.windows.workspace.widgets.ContentPanel();
-                this.setCin(splitPanel.getEditor());
-                this.setCout(splitPanel.getOutput().getTranscript());
-                return splitPanel;
+                const contentPanel = new vista.ui.windows.workspace.widgets.ContentPanel();
+                this.setCin(contentPanel.getEditor());
+                this.setCout(contentPanel.getOutput().getTranscript());
+                return contentPanel;
             },
 
             onButtonClicked: function (tag) {
@@ -39,6 +39,9 @@ qx.Class.define('vista.ui.windows.workspace.WorkspaceWindow',
                         break;
                     case 'eval':
                         this.onEval();
+                        break;
+                    case 'orientation':
+                        this.onOrientation();
                         break;
                     default:
                         console.log('onButtonClicked', tag);
@@ -62,6 +65,10 @@ qx.Class.define('vista.ui.windows.workspace.WorkspaceWindow',
                 };
                 const src = this.getCin().getValue();
                 vista.python.PythonApi.eval(src, fn);
+            },
+
+            onOrientation: function () {
+                this.getContentPanel().toggleOrientation();
             }
 
 
