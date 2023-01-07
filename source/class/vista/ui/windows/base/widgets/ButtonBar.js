@@ -28,11 +28,19 @@ qx.Class.define('vista.ui.windows.base.widgets.ButtonBar',
         members:
         {
 
-            addButton: function (label) {
+            addButton: function (label, panel) {
                 const button = new vista.ui.widgets.Button(label);
                 const tag = vista.util.StringUtil.asTag(label);
-                this.getLeftButtons().add(button);
+                panel.add(button);
                 button.addListener('click', () => { this.getWindow().onButtonClicked(tag); });
+            },
+
+            addButtonLeft(label) {
+                this.addButton(label, this.getLeftButtons());
+            },
+
+            addButtonRight(label) {
+                this.addButton(label, this.getRightButtons());
             },
 
             addPanels: function () {
