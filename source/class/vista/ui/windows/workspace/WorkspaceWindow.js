@@ -10,7 +10,7 @@ qx.Class.define('vista.ui.windows.workspace.WorkspaceWindow',
         members:
         {
 
-            defaultButtons: function () {
+            defaultButtonsLeft: function () {
                 return ['Eval', 'Clear Out', 'Clear In']
             },
 
