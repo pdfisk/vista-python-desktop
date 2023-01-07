@@ -20,8 +20,8 @@ qx.Class.define('vista.ui.windows.workspace.WorkspaceWindow',
 
             defaultContent: function () {
                 const splitPanel = new vista.ui.windows.workspace.widgets.SplitPanel();
-                this.setCin(splitPanel.getCin());
-                this.setCout(splitPanel.getCout());
+                this.setCin(splitPanel.getEditor());
+                this.setCout(splitPanel.getOutput().getTranscript());
                 return splitPanel;
             },
 

@@ -8,18 +8,18 @@ qx.Class.define('vista.ui.windows.workspace.widgets.SplitPanel',
         },
 
         properties: {
-            cin: { init: null },
-            cout: { init: null }
+            editor: { init: null },
+            output: { init: null }
         },
 
         members:
         {
 
             initialize: function () {
-                this.setCin(new vista.ui.widgets.PythonEditor());
-                this.setCout(new vista.ui.widgets.TranscriptPanel());
-                this.add(this.getCout(), 1);
-                this.add(this.getCin(), 1);
+                this.setEditor(new vista.ui.widgets.PythonEditor());
+                this.setOutput(new vista.ui.widgets.OutputPanel());
+                this.add(this.getOutput(), 1);
+                this.add(this.getEditor(), 1);
             }
 
         }
