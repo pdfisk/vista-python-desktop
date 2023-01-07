@@ -1,4 +1,4 @@
-qx.Class.define('vista.ui.windows.workspace.widgets.SplitPanel',
+qx.Class.define('vista.ui.windows.workspace.widgets.ContentPanel',
     {
         extend: qx.ui.splitpane.Pane,
 
@@ -20,6 +20,13 @@ qx.Class.define('vista.ui.windows.workspace.widgets.SplitPanel',
                 this.setOutput(new vista.ui.widgets.OutputPanel());
                 this.add(this.getOutput(), 1);
                 this.add(this.getEditor(), 1);
+            },
+
+            toggleOrientation: function () {
+                if (this.getOrientation() == 'vertical')
+                    this.setOrientation('horizontal');
+                else
+                    this.setOrientation('vertical');
             }
 
         }
