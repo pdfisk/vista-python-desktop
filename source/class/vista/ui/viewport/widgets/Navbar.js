@@ -1,6 +1,6 @@
 qx.Class.define('vista.ui.viewport.widgets.NavBar',
     {
-        extend: qx.ui.container.Composite,
+        extend: vista.ui.widgets.containers.DockPanel,
 
         type: 'singleton',
 
@@ -20,9 +20,9 @@ qx.Class.define('vista.ui.viewport.widgets.NavBar',
         {
 
             initialize: function () {
-                this.setLayout(new qx.ui.layout.Dock());
+                this.base(arguments);
                 const logo = vista.ui.viewport.widgets.Logo.getInstance();
-                this.add(logo, { edge: 'west' });
+                this.addWest(logo);
             }
 
         }
