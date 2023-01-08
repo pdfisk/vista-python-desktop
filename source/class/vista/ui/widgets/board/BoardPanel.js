@@ -8,32 +8,39 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
         },
 
         properties: {
-            tiles: { init: {} }
+            tileMap: { init: {} }
         },
 
         members:
         {
 
-            addTile: function (row, column) {
+            addTile: function (row, column, tileSize, iconSize) {
                 const tile = this.defaultTile();
-                this.getTiles()[this.getTileKey(row, column)] = tile;
+                tile.setWidth(tileSize.width);
+                tile.setHeight(tileSize.height);
+                tile.setIconSize(iconSize);
+                this.getTileMap()[this.getTileKey(row, column)] = tile;
                 tile.setHandler(this);
+                tile.setPanel(this);
                 tile.setRow(row);
                 tile.setColumn(column);
                 this.add(tile, { row: row, column: column });
+                return tile;
             },
 
             addTiles: function () {
-                this.setTiles({});
+                this.setTileMap({});
                 this.removeAll();
+                const tileSize = this.getTileSize();
+                const iconSize = parseInt(Math.min(tileSize.width, tileSize.height) * 0.5);
                 for (let row = 0; row < this.defaultSize(); row++) {
                     for (let column = 0; column < this.defaultSize(); column++)
-                        this.addTile(row, column);
+                        this.addTile(row, column, tileSize, iconSize);
                 }
             },
 
             clear: function () {
-                Object.values(this.getTiles()).forEach((tile) => { tile.clear(); });
+                this.getTiles().forEach((tile) => { tile.clear(); });
             },
 
             defaultSize: function () {
@@ -44,8 +51,30 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
                 return new vista.ui.widgets.board.BoardTile();
             },
 
+            getClientSize: function () {
+                const clientRect = this.getContentElement().getDomElement().getBoundingClientRect();
+                return { height: clientRect.height, width: clientRect.width };
+            },
+
+            getTile: function (row, column) {
+                return this.getTileMap()[this.getTileKey(row, column)];
+            },
+
             getTileKey: function (row, column) {
                 return `r${row}-c${column}`;
+            },
+
+            getTiles: function () {
+                return Object.values(this.getTileMap());
+            },
+
+            getTileSize: function () {
+                const clientSize = this.getClientSize();
+                const height = clientSize.height - this.defaultSize() * 1 - 2;
+                const width = clientSize.width - this.defaultSize() * 1 - 2;
+                const tileHeight = parseInt(height / this.defaultSize());
+                const tileWidth = parseInt(width / this.defaultSize());
+                return { height: tileHeight, width: tileWidth };
             },
 
             initialize: function () {

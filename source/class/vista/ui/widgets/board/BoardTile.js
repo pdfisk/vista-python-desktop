@@ -14,6 +14,9 @@ qx.Class.define('vista.ui.widgets.board.BoardTile',
             },
             column: { init: 0 },
             handler: { init: null },
+            iconImage: { init: null },
+            iconSize: { init: 25 },
+            panel: { init: null },
             row: { init: 0 }
         },
 
@@ -33,11 +36,30 @@ qx.Class.define('vista.ui.widgets.board.BoardTile',
                 this.getHandler().onTileClicked(this);
             },
 
+            showChick: function () {
+                this.setIcon('images/animals/chick_right.png');
+            },
+
             toggle: function () {
-                if (this.getLabel().length == 0)
-                    this.setLabel('X');
-                else
-                    this.setLabel('');
+                this.showChick();
+                //    if (this.getLabel().length == 0)
+                //        this.setLabel('X');
+                //    else
+                //        this.setLabel('');
+            },
+
+            _createChildControlImpl(id) {
+                if (id == 'icon') {
+                    const control = new qx.ui.basic.Image(this.getIcon());
+                    control.setScale(true);
+                    control.setWidth(this.getIconSize());
+                    control.setHeight(this.getIconSize());
+                    this.setIconImage(control);
+                    this._add(control);
+                    control.addListenerOnce('appear', () => { control.setDomLeft(10); });
+                    return control;
+                }
+                return super._createChildControlImpl(id);
             }
 
         }
