@@ -41,7 +41,6 @@ qx.Class.define('vista.ui.widgets.board.BoardTile',
             },
 
             onImageLoaded: function () {
-                window.X = this;
                 if (this.getIconImage())
                     this.getIconImage().setDomLeft(10);
             },
