@@ -14,7 +14,6 @@ qx.Class.define('vista.ui.widgets.board.BoardTile',
             },
             column: { init: 0 },
             handler: { init: null },
-            iconImage: { init: null },
             iconSize: { init: 25 },
             panel: { init: null },
             row: { init: 0 }
@@ -26,6 +25,11 @@ qx.Class.define('vista.ui.widgets.board.BoardTile',
             clear: function () {
                 this.setIcon(null);
                 this.setLabel(null);
+                this._removeAll();
+            },
+
+            getIconImage: function () {
+                return this._getCreatedChildControls().icon;
             },
 
             initialize: function () {
@@ -36,12 +40,24 @@ qx.Class.define('vista.ui.widgets.board.BoardTile',
                 this.getHandler().onTileClicked(this);
             },
 
+            onImageLoaded: function () {
+                window.X = this;
+                if (this.getIconImage())
+                    this.getIconImage().setDomLeft(10);
+            },
+
             showChick: function () {
+                this._removeAll();
                 this.setIcon('images/animals/chick_right.png');
+                if (this.getIconImage())
+                    this._add(this.getIconImage());
             },
 
             toggle: function () {
-                this.showChick();
+                if (this.getIcon())
+                    this.clear();
+                else
+                    this.showChick();
                 //    if (this.getLabel().length == 0)
                 //        this.setLabel('X');
                 //    else
@@ -50,14 +66,13 @@ qx.Class.define('vista.ui.widgets.board.BoardTile',
 
             _createChildControlImpl(id) {
                 if (id == 'icon') {
-                    const control = new qx.ui.basic.Image(this.getIcon());
-                    control.setScale(true);
-                    control.setWidth(this.getIconSize());
-                    control.setHeight(this.getIconSize());
-                    this.setIconImage(control);
-                    this._add(control);
-                    control.addListenerOnce('appear', () => { control.setDomLeft(10); });
-                    return control;
+                    const image = new qx.ui.basic.Image(this.getIcon());
+                    image.setScale(true);
+                    image.setWidth(this.getIconSize());
+                    image.setHeight(this.getIconSize());
+                    this._add(image);
+                    image.addListenerOnce('loaded', () => { this.onImageLoaded(); });
+                    return image;
                 }
                 return super._createChildControlImpl(id);
             }
