@@ -44,6 +44,17 @@ qx.Theme.define('vista.theme.vista.Appearance',
                 }
             },
 
+            'board-tile': {
+                alias: 'button',
+                style(states) {
+                    return {
+                        center: true,
+                        decorator: 'board-tile',
+                        font: 'bold'
+                    }
+                }
+            },
+
             buttonbar: {
                 style(states) {
                     return {

@@ -8,6 +8,10 @@ qx.Class.define('vista.ui.widgets.board.BoardTile',
         },
 
         properties: {
+            appearance: {
+                refine: true,
+                init: 'board-tile'
+            },
             column: { init: 0 },
             handler: { init: null },
             row: { init: 0 }

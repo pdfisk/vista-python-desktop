@@ -4,6 +4,9 @@ qx.Theme.define('vista.theme.vista.Color',
 
         colors:
         {
+            'board-tile-start': '#ffffff',
+            'board-tile-end': '#ffffff',
+
             'buttonbar-background': vista.constants.ColorConstants.WindowDecoratorLight,
             'navbar-background': vista.constants.ColorConstants.NavbarBackground,
             'viewport-background': vista.constants.ColorConstants.ViewportBackground,

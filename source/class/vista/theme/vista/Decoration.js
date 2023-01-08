@@ -4,6 +4,19 @@ qx.Theme.define('vista.theme.vista.Decoration',
 
         decorations:
         {
+
+            'board-tile': {
+                style: {
+                    radius: 3,
+                    color: 'vista-button-border',
+                    width: 1,
+                    startColor: 'board-tile-start',
+                    endColor: 'board-tile-end',
+                    startColorPosition: 35,
+                    endColorPosition: 100
+                }
+            },
+
             'vista-button': {
                 style: {
                     radius: 9,
@@ -122,4 +135,5 @@ qx.Theme.define('vista.theme.vista.Decoration',
             }
 
         }
+
     });
