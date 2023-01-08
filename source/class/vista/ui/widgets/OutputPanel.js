@@ -23,6 +23,10 @@ qx.Class.define('vista.ui.widgets.OutputPanel',
                     this.setSelection([this.getTranscript()]);
             },
 
+            clear: function () {
+                this.getSelection()[0].clear();
+            },
+
             initialize: function () {
                 this.setBoard(new vista.ui.widgets.board.BoardPanel());
                 this.setTranscript(new vista.ui.widgets.TranscriptPanel());

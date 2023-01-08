@@ -26,6 +26,10 @@ qx.Class.define('vista.ui.windows.workspace.widgets.ContentPanel',
                 this.getOutput().changeSelection();
             },
 
+            clearOutput: function () {
+                this.getOutput().clear();
+            },
+
             initialize: function () {
                 this.setEditor(new vista.ui.widgets.PythonEditor());
                 this.setOutput(new vista.ui.widgets.OutputPanel());

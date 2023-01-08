@@ -57,8 +57,7 @@ qx.Class.define('vista.ui.windows.workspace.WorkspaceWindow',
             },
 
             onClearOut: function () {
-                this.getCout().clear();
-
+                this.getContentPanel().clearOutput();
             },
 
             onEval: function () {

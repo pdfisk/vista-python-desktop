@@ -50,7 +50,7 @@ qx.Theme.define('vista.theme.vista.Appearance',
                     return {
                         center: true,
                         decorator: 'board-tile',
-                        font: 'bold'
+                        font: 'board-tile'
                     }
                 }
             },

@@ -8,6 +8,7 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
         },
 
         properties: {
+            tiles: { init: {} }
         },
 
         members:
@@ -15,6 +16,7 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
 
             addTile: function (row, column) {
                 const tile = this.defaultTile();
+                this.getTiles()[this.getTileKey(row, column)] = tile;
                 tile.setHandler(this);
                 tile.setRow(row);
                 tile.setColumn(column);
@@ -22,11 +24,16 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
             },
 
             addTiles: function () {
+                this.setTiles({});
                 this.removeAll();
                 for (let row = 0; row < this.defaultSize(); row++) {
                     for (let column = 0; column < this.defaultSize(); column++)
                         this.addTile(row, column);
                 }
+            },
+
+            clear: function () {
+                Object.values(this.getTiles()).forEach((tile) => { tile.clear(); });
             },
 
             defaultSize: function () {
@@ -35,6 +42,10 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
 
             defaultTile: function () {
                 return new vista.ui.widgets.board.BoardTile();
+            },
+
+            getTileKey: function (row, column) {
+                return `r${row}-c${column}`;
             },
 
             initialize: function () {

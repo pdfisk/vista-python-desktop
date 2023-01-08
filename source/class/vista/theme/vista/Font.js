@@ -4,6 +4,10 @@ qx.Theme.define('vista.theme.vista.Font',
 
         fonts:
         {
+            'board-tile': {
+                size: 16,
+                bold: true
+            }
         }
 
     });

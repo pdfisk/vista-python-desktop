@@ -20,6 +20,11 @@ qx.Class.define('vista.ui.widgets.board.BoardTile',
         members:
         {
 
+            clear: function () {
+                this.setIcon(null);
+                this.setLabel(null);
+            },
+
             initialize: function () {
                 this.addListener('execute', () => { this.onExecute(); });
             },
