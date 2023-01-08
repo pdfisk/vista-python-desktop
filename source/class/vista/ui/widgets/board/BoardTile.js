@@ -53,11 +53,7 @@ qx.Class.define('vista.ui.widgets.board.BoardTile',
 
             showIconImage: function () {
                 this._removeAll();
-                const iconImage = this.getIconImage();
-                if (iconImage) {
-                    this._add(iconImage);
-                    iconImage.setDomLeft(10);
-                }
+                this._add(this.getIconImage());
             },
 
             toggle: function () {
