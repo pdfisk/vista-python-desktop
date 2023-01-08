@@ -47,10 +47,17 @@ qx.Class.define('vista.ui.widgets.board.BoardTile',
             },
 
             showChick: function () {
-                this._removeAll();
                 this.setIcon('images/animals/chick_right.png');
-                if (this.getIconImage())
-                    this._add(this.getIconImage());
+                this.showIconImage();
+            },
+
+            showIconImage: function () {
+                this._removeAll();
+                const iconImage = this.getIconImage();
+                if (iconImage) {
+                    this._add(iconImage);
+                    iconImage.setDomLeft(10);
+                }
             },
 
             toggle: function () {

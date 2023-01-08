@@ -32,7 +32,7 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
                 this.setTileMap({});
                 this.removeAll();
                 const tileSize = this.getTileSize();
-                const iconSize = parseInt(Math.min(tileSize.width, tileSize.height) * 0.5);
+                const iconSize = parseInt(Math.min(tileSize.width, tileSize.height) * 0.75);
                 for (let row = 0; row < this.defaultSize(); row++) {
                     for (let column = 0; column < this.defaultSize(); column++)
                         this.addTile(row, column, tileSize, iconSize);
