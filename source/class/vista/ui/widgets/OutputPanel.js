@@ -32,6 +32,7 @@ qx.Class.define('vista.ui.widgets.OutputPanel',
                 this.setTranscript(new vista.ui.widgets.TranscriptPanel());
                 this.add(this.getTranscript());
                 this.add(this.getBoard());
+                vista.python.PythonApi.getInstance().setConfig('output', this);
             }
 
         }
