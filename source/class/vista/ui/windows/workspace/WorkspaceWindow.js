@@ -65,7 +65,7 @@ qx.Class.define('vista.ui.windows.workspace.WorkspaceWindow',
                     this.getCout().pr(text);
                     this.getCout().scrollToEnd();
                 };
-                const src = this.getCin().getValue();
+                const src = this.getCin().getValue().trim() + '\n';
                 vista.python.PythonApi.getInstance().runScript(src, fn);
             },
 
