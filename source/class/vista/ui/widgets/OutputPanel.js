@@ -33,6 +33,10 @@ qx.Class.define('vista.ui.widgets.OutputPanel',
                 this.add(this.getTranscript());
                 this.add(this.getBoard());
                 vista.python.PythonApi.getInstance().setConfig('output', this);
+            },
+
+            show: function (icon, row, column) {
+                console.log('OutputPanel show', icon, row, column);
             }
 
         }
