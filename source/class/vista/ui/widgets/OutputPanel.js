@@ -35,8 +35,8 @@ qx.Class.define('vista.ui.widgets.OutputPanel',
                 vista.python.PythonApi.getInstance().setConfig('output', this);
             },
 
-            show: function (icon, row, column) {
-                this.getBoard().show(icon, row, column);
+            show: function (id, row, column, icon) {
+                this.getBoard().show(id, row, column, icon);
             }
 
         }

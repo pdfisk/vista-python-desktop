@@ -90,10 +90,6 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
             onTileClicked: function (tile) {
                 //console.log('onTileClicked', tile.getRow(), tile.getColumn());
                 tile.toggle();
-            },
-
-            show: function (icon, row, column) {
-                console.log('BoardPanel show', icon, row, column);
             }
 
         }
