@@ -36,7 +36,7 @@ qx.Class.define('vista.ui.widgets.OutputPanel',
             },
 
             show: function (icon, row, column) {
-                console.log('OutputPanel show', icon, row, column);
+                this.getBoard().show(icon, row, column);
             }
 
         }
