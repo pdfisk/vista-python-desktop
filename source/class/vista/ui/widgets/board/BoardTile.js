@@ -45,8 +45,8 @@ qx.Class.define('vista.ui.widgets.board.BoardTile',
                     this.getIconImage().setDomLeft(10);
             },
 
-            showChick: function () {
-                this.setIcon('images/animals/chick_right.png');
+            showIcon: function (icon) {
+                this.setIcon(`images/animals/${icon}.png`);
                 this.showIconImage();
             },
 
@@ -59,7 +59,7 @@ qx.Class.define('vista.ui.widgets.board.BoardTile',
                 if (this.getIcon())
                     this.clear();
                 else
-                    this.showChick();
+                    this.showIcon('chick_right');
                 //    if (this.getLabel().length == 0)
                 //        this.setLabel('X');
                 //    else

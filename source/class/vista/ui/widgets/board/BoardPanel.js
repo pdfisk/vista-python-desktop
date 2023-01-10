@@ -126,6 +126,9 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
             },
 
             updateSpriteTile: function (sprite) {
+                const tile = this.getSpriteTile(sprite);
+                if (tile)
+                    tile.showIcon(sprite.icon);
                 console.log('updateSpriteTile', sprite);
             }
 
