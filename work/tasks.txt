@@ -1,2 +1,5 @@
-1. board
-2. mobile
+1. def
+2. class
+3. literal list
+4. literal dict
+
