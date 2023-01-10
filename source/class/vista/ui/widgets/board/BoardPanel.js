@@ -16,7 +16,7 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
         {
 
             addSprite: function (sprite) {
-                this.getSpriteMap[sprite.id] = sprite;
+                this.getSpriteMap()[sprite.id] = sprite;
             },
 
             addTile: function (row, column, tileSize, iconSize) {
@@ -129,7 +129,6 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
                 const tile = this.getSpriteTile(sprite);
                 if (tile)
                     tile.showIcon(sprite.icon);
-                console.log('updateSpriteTile', sprite);
             }
 
         }
