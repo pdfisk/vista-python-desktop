@@ -8,11 +8,16 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
         },
 
         properties: {
+            spriteMap: { init: {} },
             tileMap: { init: {} }
         },
 
         members:
         {
+
+            addSprite: function (sprite) {
+                this.getSpriteMap[sprite.id] = sprite;
+            },
 
             addTile: function (row, column, tileSize, iconSize) {
                 const tile = this.defaultTile();
@@ -43,6 +48,12 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
                 this.getTiles().forEach((tile) => { tile.clear(); });
             },
 
+            clearSprite: function (sprite) {
+                const tile = this.getSpriteTile(sprite);
+                if (tile)
+                    tile.clear();
+            },
+
             defaultSize: function () {
                 return 7;
             },
@@ -54,6 +65,14 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
             getClientSize: function () {
                 const clientRect = this.getContentElement().getDomElement().getBoundingClientRect();
                 return { height: clientRect.height, width: clientRect.width };
+            },
+
+            getSprite: function (id) {
+                return this.getSpriteMap()[id];
+            },
+
+            getSpriteTile: function (sprite) {
+                return this.getTile(sprite.row, sprite.column);
             },
 
             getTile: function (row, column) {
@@ -90,6 +109,24 @@ qx.Class.define('vista.ui.widgets.board.BoardPanel',
             onTileClicked: function (tile) {
                 //console.log('onTileClicked', tile.getRow(), tile.getColumn());
                 tile.toggle();
+            },
+
+            showSprite: function (id, row, column, icon) {
+                let sprite = this.getSprite(id);
+                if (sprite) {
+                    this.clearSprite(sprite);
+                    sprite.row = row;
+                    sprite.column = column;
+                }
+                else {
+                    sprite = { id: id, row: row, column: column, icon: icon };
+                    this.addSprite(sprite);
+                }
+                this.updateSpriteTile(sprite);
+            },
+
+            updateSpriteTile: function (sprite) {
+                console.log('updateSpriteTile', sprite);
             }
 
         }

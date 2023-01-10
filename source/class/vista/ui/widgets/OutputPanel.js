@@ -36,7 +36,7 @@ qx.Class.define('vista.ui.widgets.OutputPanel',
             },
 
             show: function (id, row, column, icon) {
-                this.getBoard().show(id, row, column, icon);
+                this.getBoard().showSprite(id, row, column, icon);
             }
 
         }
