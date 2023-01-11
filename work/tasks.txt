@@ -1,5 +1,1 @@
-1. def
-2. class
-3. literal list
-4. literal dict
-
+1. mobile
